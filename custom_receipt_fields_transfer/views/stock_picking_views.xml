@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Ensure custom fields are visible in internal transfer form -->
+        <record id="view_picking_form_inherit_custom_fields" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit.custom.fields</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="x_studio_consignee" attrs="{'invisible': [('picking_type_code', 'not in', ['incoming', 'internal'])]}"/>
+                    <field name="x_studio_condition_of_goods" attrs="{'invisible': [('picking_type_code', 'not in', ['incoming', 'internal'])]}"/>
+                    <field name="x_studio_destination_city" attrs="{'invisible': [('picking_type_code', 'not in', ['incoming', 'internal'])]}"/>
+                    <field name="x_studio_please_specify" attrs="{'invisible': [('picking_type_code', 'not in', ['incoming', 'internal'])]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
