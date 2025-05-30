@@ -20,3 +20,23 @@ When you validate a receipt in Odoo, if an internal transfer is created, this mo
 - Odoo 16.0
 - Requires web_studio module
 EOF
+
+## Deploy to Odoo SH
+
+1. Go to your Odoo SH dashboard
+2. Connect your GitHub repository to your Odoo SH project
+3. The module will be automatically deployed
+4. Go to Apps in your Odoo instance
+5. Update the app list
+6. Search for "Custom Receipt Fields Transfer"
+7. Install the module
+
+
+## Verification
+
+After installation, test the functionality:
+
+1. Create a receipt with your custom fields filled
+2. Validate the receipt
+3. Check if an internal transfer was created
+4. Verify that the custom fields were copied to the internal transfer
